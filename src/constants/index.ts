@@ -13,7 +13,7 @@ export const projects = [
     description:
       " MERN stack-based , small-scale carbon credit exchange platform inspired by the Kyoto Protocol",
     tech: ["Node.js", "React.js", "RAG chatbot"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-indigo-500 to-indigo-200",
     link: "https://github.com/hcoe-sidewinder/hackathon",
   },
   {
@@ -21,7 +21,7 @@ export const projects = [
     description:
       "Machine learning-based system for predicting crop yield based on real-time regional data.",
     tech: ["Python-Flask ", "LSTM", "Naive-Bayes Classifier", "Leaflet.js"],
-    color: "from-green-500 to-teal-500",
+    color: "from-green-400 to-green-600",
     link: "https://github.com/thisme8/Crop-Yield-Prediction-repo",
   },
   {
@@ -43,9 +43,9 @@ export const projects = [
 
 export const skills = [
   { name: "Frontend ", icon: Code, level: 80 },
-  { name: "UI/UX Design", icon: Palette, level: 87 },
+  { name: "UI/UX Design", icon: Palette, level: 79 },
   { name: "Backend", icon: BrainCog, level: 65 },
-  { name: "Performance", icon: Zap, level: 82 },
+  { name: "Performance", icon: Zap, level: 80 },
 ];
 
 export const certificates = [
@@ -55,7 +55,7 @@ export const certificates = [
     provider: "DataCamp",
     date: "July 2023",
     category: "frontend",
-    image: "/flutter.jpg?height=300&width=400",
+    image: "/flutter.jpg",
     description: "Comprehensive Flutter course for mobile development",
     skills: ["Flutter", "Dart"],
 
@@ -66,9 +66,9 @@ export const certificates = [
     id: 2,
     title: "Understanding Cloud Computing",
     provider: "DataCamp",
-    date: "July 2023",
+    date: "June 2025",
     category: "cloud",
-    image: "/hackathon.jpg?height=300&width=400",
+    image: "/aws.jpg",
     description:
       "Understanding Cloud Computing as a part of the AWS Cloud Practitioner Path",
     skills: ["AWS", "Cloud"],
@@ -80,7 +80,7 @@ export const certificates = [
     provider: "Cloud Native Computing Foundation",
     date: "July 2024",
     category: "fullstack",
-    image: "/mern.jpg?height=300&width=400",
+    image: "/mern.jpg",
     description: "Complete full-stack development with modern frameworks",
     skills: ["React", "Node.js", "MongoDB", "Express"],
     color: "from-indigo-500 to-purple-500",
@@ -91,11 +91,11 @@ export const certificates = [
     provider: "DataCamp",
     date: "May 2025",
     category: "database",
-    image: "/hackathon.jpg?height=300&width=400",
+    image: "/sql.jpg",
     description:
       "Intermediate-level SQL course covering complex queries and PostgreSQL features.",
     skills: ["SQL", "PostgreSQL"],
-    color: "from-red-500 to-cyan-200",
+    color: "from-indigo-500 to-indigo-200",
   },
   {
     id: 5,
@@ -103,7 +103,7 @@ export const certificates = [
     provider: "Himalaya College Of Engineering",
     date: "February 2025",
     category: "accomplishments",
-    image: "/hackathon.jpg?height=300&width=400",
+    image: "/hackathon.jpg",
     description: "1st Runner Up",
     skills: ["React", "Node.js", "MongoDB", "Express"],
     color: "from-yellow-500 to-orange-500",
@@ -114,7 +114,7 @@ export const certificates = [
     provider: "Nepal Student IT Club",
     date: "June 2025",
     category: "accomplishments",
-    image: "/mern.jpg?height=300&width=400",
+    image: "/hfn.jpg",
     description: "1st Runner Up",
     skills: [
       "React Native",

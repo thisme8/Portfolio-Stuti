@@ -17,6 +17,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { categories, certificates } from "@/constants";
+import BackgroundParticles from "@/components/ui/backgroundParticles";
 
 export default function CertificatesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -37,34 +38,8 @@ export default function CertificatesPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Animated Background */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-        {/* Floating Certificates Animation */}
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-8 h-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded border border-yellow-500/20"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 5, -5, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              repeat: Number.POSITIVE_INFINITY,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
+      <BackgroundParticles />
       <div className="relative z-10">
-        {/* Header */}
         <motion.header
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -84,11 +59,10 @@ export default function CertificatesPage() {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
               Certificates & Achievements
             </h1>
-            <div className="w-32" /> {/* Spacer */}
+            <div className="w-32" />
           </div>
         </motion.header>
 
-        {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,7 +85,6 @@ export default function CertificatesPage() {
           </div>
         </motion.section>
 
-        {/* Search and Filter */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -135,7 +108,6 @@ export default function CertificatesPage() {
               </div>
             </div>
 
-            {/* Category Filters */}
             <div className="flex flex-wrap gap-3 mb-8">
               {categories.map((category) => (
                 <motion.button
@@ -156,7 +128,6 @@ export default function CertificatesPage() {
           </div>
         </motion.section>
 
-        {/* Certificates Grid */}
         <section className="px-6 pb-20">
           <div className="max-w-7xl mx-auto">
             <AnimatePresence mode="wait">
@@ -183,14 +154,14 @@ export default function CertificatesPage() {
                         className={`h-48 bg-gradient-to-br ${cert.color} relative overflow-hidden`}
                       >
                         <Image
-                          src={cert.image || "/placeholder.svg"}
+                          src={cert.image}
                           alt={cert.title}
-                          width={86}
-                          height={86}
-                          className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                          width={100}
+                          height={100}
+                          className="w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-opacity duration-300"
                         />
                         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
-                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity duration-300">
                           <ExternalLink className="h-6 w-6 text-white" />
                         </div>
                         <div className="absolute bottom-4 left-4">
@@ -248,7 +219,6 @@ export default function CertificatesPage() {
           </div>
         </section>
 
-        {/* Certificate Modal */}
         <AnimatePresence>
           {selectedCert && (
             <motion.div
@@ -292,18 +262,18 @@ export default function CertificatesPage() {
                       </div>
 
                       <div
-                        className={`h-64 bg-gradient-to-br ${cert.color} rounded-lg mb-6 relative overflow-hidden`}
+                        className={`max-h-[400px] overflow-y-auto bg-gradient-to-br ${cert.color} rounded-lg mb-6 relative`}
                       >
                         <Image
                           src={cert.image || "/placeholder.svg"}
                           alt={cert.title}
                           width={86}
                           height={86}
-                          className="w-full h-full object-cover opacity-30"
+                          className="w-full h-full object-cover opacity-100 overflow-y-auto"
                         />
-                        <div className="absolute inset-0 bg-black/40" />
-                        <div className="absolute bottom-4 left-4">
-                          <Award className="h-12 w-12 text-white" />
+                        <div className="absolute h-full" />
+                        <div className="absolute top-6 right-4">
+                          <Award className="h-12 w-12 text-black" />
                         </div>
                       </div>
 
@@ -327,15 +297,14 @@ export default function CertificatesPage() {
                         </div>
                       </div>
 
-                      <div className="flex gap-4">
-                        <Button
-                          variant="outline"
-                          className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent"
-                        >
-                          <Download className="mr-2 h-4 w-4" />
-                          Download
-                        </Button>
-                      </div>
+                      <a
+                        href={cert.image}
+                        download
+                        className="inline-flex items-center px-4 py-2 border border-gray-600 text-gray-300 hover:bg-gray-800 rounded-md transition-colors"
+                      >
+                        <Download className="mr-2 h-4 w-4" />
+                        Download
+                      </a>
                     </>
                   );
                 })()}

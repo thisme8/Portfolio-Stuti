@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const Certificates = () => {
   return (
@@ -45,7 +45,7 @@ const Certificates = () => {
             </motion.div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 ">
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
             {[
               {
                 title: "Flutter Training Course",
@@ -63,7 +63,7 @@ const Certificates = () => {
               {
                 title: "Understanding Cloud Computing",
                 provider: "DataCamp",
-                date: "July 2023",
+                date: "June 2025",
                 category: "cloud",
                 image: "/hackathon.jpg?height=300&width=400",
                 description:
@@ -91,22 +91,26 @@ const Certificates = () => {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, rotateY: 3 }}
-                className="group cursor-pointer"
+                className="group cursor-pointer h-full"
               >
-                <Card className="bg-gray-900/50 border-gray-800 backdrop-blur-sm hover:border-yellow-500/50 transition-all duration-300 overflow-hidden">
-                  <div
-                    className={`h-32 bg-gradient-to-br ${cert.color} relative`}
-                  >
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
-                    <div className="absolute bottom-2 right-2 text-white/80 text-sm font-semibold">
-                      {cert.date}
+                <Link href="/certificates">
+                  <Card className="h-full flex flex-col justify-between bg-gray-900/50 border-gray-800 backdrop-blur-sm hover:border-yellow-500/50 transition-all duration-300 overflow-hidden">
+                    <div
+                      className={`h-32 bg-gradient-to-br ${cert.color} relative`}
+                    >
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+                      <div className="absolute bottom-2 right-2 text-white/80 text-sm font-semibold">
+                        {cert.date}
+                      </div>
                     </div>
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-bold text-white mb-1">{cert.title}</h3>
-                    <p className="text-gray-400 text-sm">{cert.provider}</p>
-                  </CardContent>
-                </Card>
+                    <CardContent className="p-4">
+                      <h3 className="font-bold text-white mb-1">
+                        {cert.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm">{cert.provider}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -114,6 +118,6 @@ const Certificates = () => {
       </section>
     </>
   );
-}
+};
 
-export default Certificates
+export default Certificates;

@@ -38,9 +38,9 @@ const ProjectSection = () => {
                   rotateY: 5,
                   transition: { duration: 0.3 },
                 }}
-                className="group cursor-pointer"
+                className="group cursor-pointer h-full"
               >
-                <Card className="bg-gray-900/50 border-gray-800 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 overflow-hidden">
+                <Card className="h-full flex flex-col justify-between bg-gray-900/50 border-gray-800 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 overflow-hidden">
                   <div
                     className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}
                   >
