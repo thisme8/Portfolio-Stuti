@@ -107,7 +107,7 @@ export default function CertificatesPage() {
             <span>{certificates.length} Certificates Earned</span>
             <span>•</span>
             <Calendar className="h-6 w-6 text-yellow-400" />
-            <span>Updated March 2024</span>
+            <span>Updated July 2025</span>
           </div>
         </motion.section>
 
@@ -328,10 +328,6 @@ export default function CertificatesPage() {
                       </div>
 
                       <div className="flex gap-4">
-                        <Button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white">
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Verify Certificate
-                        </Button>
                         <Button
                           variant="outline"
                           className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent"

@@ -27,7 +27,7 @@ export const projects = [
   {
     title: "SANDUK - A Family Health Vault",
     description:
-      "Machine learning-based system for predicting crop yield based on real-time regional data.",
+      "A React Native based digital health ecosystem enabling Nepali families to securely manage multi-generational medical records.",
     tech: [
       "React Native",
       "D3.js",
@@ -69,9 +69,9 @@ export const certificates = [
     date: "July 2023",
     category: "cloud",
     image: "/hackathon.jpg?height=300&width=400",
-    description: "Comprehensive Flutter course for mobile development",
+    description:
+      "Understanding Cloud Computing as a part of the AWS Cloud Practitioner Path",
     skills: ["AWS", "Cloud"],
-
     color: "from-purple-500 to-pink-500",
   },
   {
@@ -92,9 +92,10 @@ export const certificates = [
     date: "May 2025",
     category: "database",
     image: "/hackathon.jpg?height=300&width=400",
-    description: "Intermediate Level Sql from DataCamp",
-    skills: ["SQL", "PostGreSQL"],
-    color: "from-yellow-500 to-orange-500",
+    description:
+      "Intermediate-level SQL course covering complex queries and PostgreSQL features.",
+    skills: ["SQL", "PostgreSQL"],
+    color: "from-red-500 to-cyan-200",
   },
   {
     id: 5,
@@ -114,9 +115,15 @@ export const certificates = [
     date: "June 2025",
     category: "accomplishments",
     image: "/mern.jpg?height=300&width=400",
-    description: "Intermediate Level Sql from DataCamp",
-    skills: ["SQL", "PostGreSQL"],
-    color: "from-yellow-500 to-orange-500",
+    description: "1st Runner Up",
+    skills: [
+      "React Native",
+      "D3.js",
+      "Linear Regression",
+      "Python",
+      "RAG chatbot",
+    ],
+    color: "from-orange-500 to-orange-200",
   },
 ];
 
